@@ -1,9 +1,15 @@
 <template>
   <div>
-    <form @submit.prevent="onSubmit">
-      <input v-model="text" type="text" placeholder="Search Joke..." />
-      <input type="submit" value="Search" />
-    </form>
+    <a-form :form="form" :layout="formLayout" @submit.prevent="onSubmit">
+      <a-form-item>
+        <a-input v-model="text" type="text" placeholder="Search Joke..." />
+      </a-form-item>
+      <a-form-item
+        ><a-button html-type="submit" type="primary"
+          >Search</a-button
+        ></a-form-item
+      >
+    </a-form>
   </div>
 </template>
 
@@ -13,6 +19,8 @@ export default {
   data() {
     return {
       text: '',
+      formLayout: 'inline',
+      form: this.$form.createForm(this, { name: 'coordinated' }),
     }
   },
   methods: {

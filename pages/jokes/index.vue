@@ -20,6 +20,7 @@ export default {
     Joke,
     SearchJoke,
   },
+  scrollToTop: true,
   data() {
     return {
       jokes: [],

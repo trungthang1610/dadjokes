@@ -8,16 +8,8 @@
 </template>
 
 <script>
-import { required, minLength } from 'vuelidate/lib/validators'
-
 export default {
   name: 'SearchJoke',
-  validate: {
-    text: {
-      required,
-      minlength: minLength(4),
-    },
-  },
   data() {
     return {
       text: '',
